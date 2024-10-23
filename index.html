@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="globalstyles.css" />
+        <link rel="stylesheet" href="navbarstyles.css" />
+        <link rel="stylesheet" href="footerstyles.css" />
+    </head>
+    <body>
+        <header class="nav-bar">
+            <div class="nav-logo pull-left">
+                <a href="https://yts.mx/"
+                    ><img
+                        src="https://yts.mx/assets/images/website/logo-YTS.svg"
+                        alt="YIFY"
+                /></a>
+            </div>
+            <span class="header-slogan hidden-xs pull-left"
+                >HD movies at the smallest file size.</span
+            >
+            <div class="main-nav-links hidden-sm hidden-xs">
+                <form
+                    method="GET"
+                    action="https://yts.mx/search-movies"
+                    accept-charset="UTF-8"
+                    id="quick-search"
+                    name="quick-search"
+                >
+                    <div id="quick-search-container">
+                        <input
+                            id="quick-search-input"
+                            name="query"
+                            autocomplete="off"
+                            type="search"
+                            value="Quick search"
+                        />
+                        <div
+                            class="ajax-spinner"
+                            style="background-position: -112px 0px"
+                        ></div>
+                    </div>
+                </form>
+                <ul class="nav-links">
+                    <li><a href="https://yts.mx/"> Home </a></li>
+                    <li>
+                        <a
+                            href="https://yts.mx/browse-movies/0/2160p/all/0/latest/0/all"
+                            style="color: #6ac045"
+                        >
+                            4K
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yts.mx/trending-movies"> Trending </a>
+                    </li>
+                    <li>
+                        <a href="https://yts.mx/browse-movies">
+                            Browse Movies
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav-links nav-link-guest">
+                    <li>
+                        <a class="login-nav-btn" href="javascript:void(0)">
+                            Login
+                        </a>
+                        &nbsp;|&nbsp;
+                        <a class="register-nav-btn" href="javascript:void(0)">
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-mobile-buttons hidden-md hidden-lg">
+                <a
+                    class="touchable"
+                    id="mobile-search-btn"
+                    href="javascript:void(0)"
+                >
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+                <a
+                    class="touchable"
+                    href="https://yts.mx/browse-movies/0/2160p/all/0/latest/0/all"
+                    style="color: #6ac045"
+                >
+                    <b>4K</b>
+                </a>
+                <a class="touchable" href="https://yts.mx/trending-movies">
+                    <span class="glyphicon glyphicon-stats"></span>
+                </a>
+                <a class="touchable" href="https://yts.mx/browse-movies">
+                    <span class="glyphicon glyphicon-list-alt"></span>
+                </a>
+                <a class="touchable" href="https://yts.mx/login">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </header>
+
+        <main></main>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-20">
+                        <ul class="text-center">
+                            <li>YTS © 2011 - 2024</li>
+                            <li>-</li>
+                            <li><a href="https://yts.mx/blog">Blog</a></li>
+                            <li>-</li>
+                            <li><a href="https://yts.mx/dmca">DMCA</a></li>
+                            <li>-</li>
+                            <li><a href="https://yts.mx/api">API</a></li>
+                            <li>-</li>
+                            <li><a href="https://yts.mx/rss-guide">RSS</a></li>
+                            <li>-</li>
+                            <li>
+                                <a href="https://yts.mx/contact">Contact</a>
+                            </li>
+                            <li>-</li>
+                            <li>
+                                <a href="https://yts.mx/browse-movies"
+                                    >Browse Movies</a
+                                >
+                            </li>
+                            <li>-</li>
+                            <li>
+                                <a href="https://yts.mx/requests">Requests</a>
+                            </li>
+                            <li>-</li>
+                            <li><a href="https://yts.mx/login">Login</a></li>
+                            <li>-</li>
+                            <li>
+                                <a href="https://yts.mx/languages">Language</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-20">
+                        <ul class="text-center">
+                            <li>
+                                <a href="https://eztv.li" title="EZTV">EZTV</a>
+                            </li>
+                            <li>-</li>
+                            <li>
+                                <a
+                                    href="https://yifystatus.com"
+                                    title="YTS YIFY Status"
+                                    >YIFY Status</a
+                                >
+                            </li>
+                            <li>-</li>
+                            <li>
+                                <a
+                                    href="https://ytsproxies.com"
+                                    title="YTS Proxies"
+                                    >YTS Proxies</a
+                                >
+                            </li>
+                            <li>-</li>
+                            <li>
+                                <a
+                                    href="http://ytsyifyupcmxftncrnqd4bmwxvhlibhdat74w6xnmn33njxts4eeaiqd.onion/"
+                                    title="YTS Proxies (TOR)"
+                                    >YTS Proxies (TOR)</a
+                                >
+                            </li>
+                            <li>-</li>
+                            <li>
+                                <iframe
+                                    id="twitter-widget-0"
+                                    scrolling="no"
+                                    frameborder="0"
+                                    allowtransparency="true"
+                                    allowfullscreen="true"
+                                    class="twitter-follow-button twitter-follow-button-rendered"
+                                    title="Twitter Follow Button"
+                                    src="https://platform.twitter.com/widgets/follow_button.2f70fb173b9000da126c79afe2098f02.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=ytsyify&amp;show_count=false&amp;show_screen_name=true&amp;size=m&amp;time=1729656674398"
+                                    style="
+                                        position: static;
+                                        visibility: visible;
+                                        width: 125px;
+                                        height: 20px;
+                                    "
+                                    data-screen-name="ytsyify"
+                                ></iframe>
+                                <!-- <script
+                                    async=""
+                                    src="https://platform.twitter.com/widgets.js"
+                                    charset="utf-8"
+                                    type="text/javascript"
+                                ></script> -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-20">
+                        <ul class="text-center">
+                            <li style="font-size: 0.8em">
+                                By using this site you agree to and accept our
+                                <a href="/terms">User Agreement</a>, which can
+                                be read <a href="/terms">here</a>.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
