@@ -6,28 +6,21 @@
         <title>Document</title>
         <link rel="stylesheet" href="globalstyles.css" />
         <link rel="stylesheet" href="navbarstyles.css" />
+        <link rel="stylesheet" href="contentstyles.css" />
         <link rel="stylesheet" href="footerstyles.css" />
     </head>
     <body>
-        <header class="nav-bar">
-            <div class="nav-logo pull-left">
-                <a href="https://yts.mx/"
-                    ><img
+        <!-- Navigation bar -->
+        <nav class="nav-bar">
+            <div class="nav-logo">
+                <a href="#">
+                    <img
                         src="https://yts.mx/assets/images/website/logo-YTS.svg"
-                        alt="YIFY"
-                /></a>
+                    />
+                </a>
             </div>
-            <span class="header-slogan hidden-xs pull-left"
-                >HD movies at the smallest file size.</span
-            >
-            <div class="main-nav-links hidden-sm hidden-xs">
-                <form
-                    method="GET"
-                    action="https://yts.mx/search-movies"
-                    accept-charset="UTF-8"
-                    id="quick-search"
-                    name="quick-search"
-                >
+            <div class="nav-bar2">
+                <div class="main-nav-links">
                     <div id="quick-search-container">
                         <input
                             id="quick-search-input"
@@ -36,71 +29,130 @@
                             type="search"
                             value="Quick search"
                         />
-                        <div
-                            class="ajax-spinner"
-                            style="background-position: -112px 0px"
-                        ></div>
                     </div>
-                </form>
-                <ul class="nav-links">
-                    <li><a href="https://yts.mx/"> Home </a></li>
-                    <li>
-                        <a
-                            href="https://yts.mx/browse-movies/0/2160p/all/0/latest/0/all"
-                            style="color: #6ac045"
-                        >
-                            4K
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yts.mx/trending-movies"> Trending </a>
-                    </li>
-                    <li>
-                        <a href="https://yts.mx/browse-movies">
-                            Browse Movies
-                        </a>
-                    </li>
-                </ul>
-                <ul class="nav-links nav-link-guest">
-                    <li>
-                        <a class="login-nav-btn" href="javascript:void(0)">
-                            Login
-                        </a>
-                        &nbsp;|&nbsp;
-                        <a class="register-nav-btn" href="javascript:void(0)">
-                            Register
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav-mobile-buttons hidden-md hidden-lg">
-                <a
-                    class="touchable"
-                    id="mobile-search-btn"
-                    href="javascript:void(0)"
-                >
-                    <span class="glyphicon glyphicon-search"></span>
-                </a>
-                <a
-                    class="touchable"
-                    href="https://yts.mx/browse-movies/0/2160p/all/0/latest/0/all"
-                    style="color: #6ac045"
-                >
-                    <b>4K</b>
-                </a>
-                <a class="touchable" href="https://yts.mx/trending-movies">
-                    <span class="glyphicon glyphicon-stats"></span>
-                </a>
-                <a class="touchable" href="https://yts.mx/browse-movies">
-                    <span class="glyphicon glyphicon-list-alt"></span>
-                </a>
-                <a class="touchable" href="https://yts.mx/login">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
-        </header>
 
-        <main></main>
+                    <ul class="nav-links">
+                        <li><a href="#"> Home </a></li>
+                        <li><a href="#" style="color: #6ac045">4K</a></li>
+                        <li><a href="#"> Trending </a></li>
+                        <li><a href="#">Browse Movies</a></li>
+                    </ul>
+                    <ul class="nav-links">
+                        <li>
+                            <a class="login-nav-btn" href="#">Login</a>
+                            &nbsp;|&nbsp;
+                            <a class="register-nav-btn" href="#">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content Section -->
+        <main class="landing">
+            <div class="content">
+                <h1>Download YTS YIFY movies: HD smallest size</h1>
+                <p>
+                    Welcome to the official YTS.MX website. Here you can browse
+                    and download YIFY movies in excellent <br />
+                    720p, 1080p, 2160p 4K and 3D quality, all at the smallest
+                    file size. YTS Movies Torrents.
+                </p>
+
+                <a href="#">
+                    <strong>IMPORTANT</strong> - YTS.MX is the only new official
+                    domain for YIFY Movies
+                </a>
+
+                <div>
+                    <img src="/img/telegram.svg" width="16" height="16" />
+                    <a href="#">@YTSMX_UPDATES</a>
+                    <label style="color: #ccc">|</label>
+                    <img src="/img/twitter.svg" width="16" height="16" />
+                    <a href="#"
+                        >Follow @YTSYIFY for upcoming featured movies!</a
+                    >
+                </div>
+            </div>
+
+            <div class="movies-section">
+                <p class="category-section">Popular Downloads</p>
+                <div class="movies-grid">
+                    <div class="movie">
+                        <img src="/img/movies/transformer-one-2024.jpg" />
+                        <p class="p1">Transformers One</p>
+                        <p>2024</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/pasupati-prasad-2016.jpg" />
+                        <p class="p1">Pasupati Prasad</p>
+                        <p>2016</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/guras-2023.jpg" />
+                        <p class="p1">Guras</p>
+                        <p>2023</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/man-from-kathmandu-2019.jpg" />
+                        <p class="p1">Man From Kathmandu</p>
+                        <p>2019</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movies-section">
+                <p class="category-section">Latest YIFY Movies Torrents</p>
+                <div class="movies-grid">
+                    <div class="movie">
+                        <img src="/img/movies/12-Gaun-2024.jpg" />
+                        <p class="p1">12 Gaun</p>
+                        <p>2024</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/jatra-2016.jpg" />
+                        <p class="p1">Jatra</p>
+                        <p>2016</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/kalo-pothi.jpg" />
+                        <p class="p1">Kalo Pothi</p>
+                        <p>2015</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/bulbul-2019.jpg" />
+                        <p class="p1">Bulbul</p>
+                        <p>2019</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movies-section">
+                <p class="category-section">Upcoming YIFY Movies</p>
+                <div class="movies-grid">
+                    <div class="movie">
+                        <img src="/img/movies/transformer-one-2024.jpg" />
+                        <p>Transformers One</p>
+                        <p>2024</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/pasupati-prasad-2016.jpg" />
+                        <p>Pasupati Prasad</p>
+                        <p>2016</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/guras-2023.jpg" />
+                        <p>Guras</p>
+                        <p>2023</p>
+                    </div>
+                    <div class="movie">
+                        <img src="/img/movies/man-from-kathmandu-2019.jpg" />
+                        <p>Man From Kathmandu</p>
+                        <p>2019</p>
+                    </div>
+                </div>
+            </div>
+        </main>
 
         <footer>
             <div class="container">
@@ -109,91 +161,39 @@
                         <ul class="text-center">
                             <li>YTS © 2011 - 2024</li>
                             <li>-</li>
-                            <li><a href="https://yts.mx/blog">Blog</a></li>
+                            <li><a href="#">Blog</a></li>
                             <li>-</li>
-                            <li><a href="https://yts.mx/dmca">DMCA</a></li>
+                            <li><a href="#">DMCA</a></li>
                             <li>-</li>
-                            <li><a href="https://yts.mx/api">API</a></li>
+                            <li><a href="#">API</a></li>
                             <li>-</li>
-                            <li><a href="https://yts.mx/rss-guide">RSS</a></li>
+                            <li><a href="#">RSS</a></li>
                             <li>-</li>
-                            <li>
-                                <a href="https://yts.mx/contact">Contact</a>
-                            </li>
+                            <li><a href="#">Contact</a></li>
                             <li>-</li>
-                            <li>
-                                <a href="https://yts.mx/browse-movies"
-                                    >Browse Movies</a
-                                >
-                            </li>
+                            <li><a href="#">Browse Movies</a></li>
                             <li>-</li>
-                            <li>
-                                <a href="https://yts.mx/requests">Requests</a>
-                            </li>
+                            <li><a href="#">Requests</a></li>
                             <li>-</li>
-                            <li><a href="https://yts.mx/login">Login</a></li>
+                            <li><a href="#">Login</a></li>
                             <li>-</li>
-                            <li>
-                                <a href="https://yts.mx/languages">Language</a>
-                            </li>
+                            <li><a href="#">Language</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xs-20">
                         <ul class="text-center">
-                            <li>
-                                <a href="https://eztv.li" title="EZTV">EZTV</a>
-                            </li>
+                            <li><a href="#" title="EZTV">EZTV</a></li>
+                            <li>-</li>
+                            <li><a href="#">YIFY Status</a></li>
+                            <li>-</li>
+                            <li><a href="#">YTS Proxies</a></li>
                             <li>-</li>
                             <li>
-                                <a
-                                    href="https://yifystatus.com"
-                                    title="YTS YIFY Status"
-                                    >YIFY Status</a
-                                >
-                            </li>
-                            <li>-</li>
-                            <li>
-                                <a
-                                    href="https://ytsproxies.com"
-                                    title="YTS Proxies"
-                                    >YTS Proxies</a
-                                >
-                            </li>
-                            <li>-</li>
-                            <li>
-                                <a
-                                    href="http://ytsyifyupcmxftncrnqd4bmwxvhlibhdat74w6xnmn33njxts4eeaiqd.onion/"
-                                    title="YTS Proxies (TOR)"
+                                <a href="#" title="YTS Proxies (TOR)"
                                     >YTS Proxies (TOR)</a
                                 >
-                            </li>
-                            <li>-</li>
-                            <li>
-                                <iframe
-                                    id="twitter-widget-0"
-                                    scrolling="no"
-                                    frameborder="0"
-                                    allowtransparency="true"
-                                    allowfullscreen="true"
-                                    class="twitter-follow-button twitter-follow-button-rendered"
-                                    title="Twitter Follow Button"
-                                    src="https://platform.twitter.com/widgets/follow_button.2f70fb173b9000da126c79afe2098f02.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=ytsyify&amp;show_count=false&amp;show_screen_name=true&amp;size=m&amp;time=1729656674398"
-                                    style="
-                                        position: static;
-                                        visibility: visible;
-                                        width: 125px;
-                                        height: 20px;
-                                    "
-                                    data-screen-name="ytsyify"
-                                ></iframe>
-                                <!-- <script
-                                    async=""
-                                    src="https://platform.twitter.com/widgets.js"
-                                    charset="utf-8"
-                                    type="text/javascript"
-                                ></script> -->
                             </li>
                         </ul>
                     </div>
@@ -203,8 +203,8 @@
                         <ul class="text-center">
                             <li style="font-size: 0.8em">
                                 By using this site you agree to and accept our
-                                <a href="/terms">User Agreement</a>, which can
-                                be read <a href="/terms">here</a>.
+                                <a href="#">User Agreement</a>, which can be
+                                read <a href="#">here</a>.
                             </li>
                         </ul>
                     </div>
