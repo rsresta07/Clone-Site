@@ -4,10 +4,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>The Official Home of YIFY Movies Torrent Download - YTS</title>
-        <link rel="stylesheet" href="globalstyles.css" />
-        <link rel="stylesheet" href="navbarstyles.css" />
-        <link rel="stylesheet" href="contentstyles.css" />
-        <link rel="stylesheet" href="footerstyles.css" />
+
+        <link rel="stylesheet" href="/css/globalstyles.css" />
+        <link rel="stylesheet" href="/css/navbarstyles.css" />
+        <link rel="stylesheet" href="/css/contentstyles.css" />
+        <link rel="stylesheet" href="/css/footerstyles.css" />
+
+        <script type="module" src="/javascript/mainscript.js"></script>
+        <script type="module" src="/javascript/searchScript.js"></script>
+        <script type="module" src="/javascript/movieData.js"></script>
+        <script type="module" src="/javascript/footerscript.js"></script>
     </head>
     <body>
         <!-- Navigation bar -->
@@ -19,23 +25,27 @@
                     />
                 </a>
             </div>
-            <div class="nav-bar2">
-                <div class="main-nav-links">
-                    <div id="quick-search-container">
-                        <input
-                            id="quick-search-input"
-                            name="query"
-                            autocomplete="off"
-                            type="search"
-                            value="Quick search"
-                        />
-                    </div>
 
+            <div class="nav-bar2">
+                <div id="quick-search-container">
+                <input
+                    class="quick-search-input"
+                    id="searchInput"
+                    type="search"
+                    placeholder="Quick search"
+                />
+                <div id="dropdown" class="dropdown"></div>
+            </div>
+                <div class="main-nav-links">
                     <ul class="nav-links">
-                        <li><a href="#"> Home </a></li>
-                        <li><a href="#" style="color: #6ac045">4K</a></li>
-                        <li><a href="#"> Trending </a></li>
-                        <li><a href="#">Browse Movies</a></li>
+                        <li><a href="#" class="nav-btn"> Home </a></li>
+                        <li>
+                            <a href="#" style="color: #6ac045" class="nav-btn"
+                                >4K</a
+                            >
+                        </li>
+                        <li><a href="#" class="nav-btn"> Trending </a></li>
+                        <li><a href="#" class="nav-btn">Browse Movies</a></li>
                     </ul>
                     <ul class="nav-links">
                         <li>
@@ -75,119 +85,15 @@
                 </div>
             </div>
 
-            <div class="movies-section">
-                <div class="category-title">
-                    <p class="category-section">Popular Downloads</p>
-                    <a href="#" class="browse">Browse More</a>
-                </div>
-                <div class="movies-grid">
-                    <div class="movie">
-                        <img src="/img/movies/transformer-one-2024.jpg" />
-                        <p class="p1">Transformers One</p>
-                        <p>2024</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/pasupati-prasad-2016.jpg" />
-                        <p class="p1">Pasupati Prasad</p>
-                        <p>2016</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/guras-2023.jpg" />
-                        <p class="p1">Guras</p>
-                        <p>2023</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/man-from-kathmandu-2019.jpg" />
-                        <p class="p1">Man From Kathmandu</p>
-                        <p>2019</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="movies-section">
-                <div class="category-title">
-                    <p class="category-section">Latest YIFY Movies Torrents</p>
-                    <a href="#" class="browse">Browse More</a>
-                </div>
-                <div class="movies-grid">
-                    <div class="movie">
-                        <img src="/img/movies/12-Gaun-2024.jpg" />
-                        <p class="p1">12 Gaun</p>
-                        <p>2024</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/jatra-2016.jpg" />
-                        <p class="p1">Jatra</p>
-                        <p>2016</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/kalo-pothi.jpg" />
-                        <p class="p1">Kalo Pothi</p>
-                        <p>2015</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/bulbul-2019.jpg" />
-                        <p class="p1">Bulbul</p>
-                        <p>2019</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="movies-section">
-                <div class="category-title">
-                    <p class="category-section">Upcoming YIFY Movies</p>
-                    <a href="#" class="browse">Browse More</a>
-                </div>
-                <div class="movies-grid">
-                    <div class="movie">
-                        <img src="/img/movies/transformer-one-2024.jpg" />
-                        <p>Transformers One</p>
-                        <p>2024</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/pasupati-prasad-2016.jpg" />
-                        <p>Pasupati Prasad</p>
-                        <p>2016</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/guras-2023.jpg" />
-                        <p>Guras</p>
-                        <p>2023</p>
-                    </div>
-                    <div class="movie">
-                        <img src="/img/movies/man-from-kathmandu-2019.jpg" />
-                        <p>Man From Kathmandu</p>
-                        <p>2019</p>
-                    </div>
-                </div>
-            </div>
+            <!--* Data haru chai Dynamically load huncha Javascript file bata-->
+            <div id="movies-container"></div>
         </main>
 
         <footer>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-20">
-                        <ul class="text-center">
-                            <li>YTS © 2011 - 2024</li>
-                            <li>-</li>
-                            <li><a href="#">Blog</a></li>
-                            <li>-</li>
-                            <li><a href="#">DMCA</a></li>
-                            <li>-</li>
-                            <li><a href="#">API</a></li>
-                            <li>-</li>
-                            <li><a href="#">RSS</a></li>
-                            <li>-</li>
-                            <li><a href="#">Contact</a></li>
-                            <li>-</li>
-                            <li><a href="#">Browse Movies</a></li>
-                            <li>-</li>
-                            <li><a href="#">Requests</a></li>
-                            <li>-</li>
-                            <li><a href="#">Login</a></li>
-                            <li>-</li>
-                            <li><a href="#">Language</a></li>
-                        </ul>
+                        <ul class="text-center" id="footer-list"></ul>
                     </div>
                 </div>
                 <div class="row">

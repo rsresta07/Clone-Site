@@ -1,0 +1,126 @@
+.landing {
+    padding: 100px;
+    text-align: center;
+    z-index: 30;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.content p {
+    color: #ccc;
+    font-size: small;
+}
+
+.content a {
+    font-size: small;
+    color: #00b4d8;
+}
+
+.movies-section {
+    margin-top: 40px;
+}
+
+.movies-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin: 0 50px;
+}
+
+.category-section {
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+    font-size: large;
+}
+
+.movie img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border: 5px solid #ccc;
+    transition: transform 0.3s;
+}
+
+.movie p {
+    color: #fff;
+    text-align: left;
+    margin: 5px;
+}
+
+.p1 {
+    font-weight: bold;
+}
+
+.category-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.browse {
+    font-weight: bold;
+    color: #6e6e6e;
+}
+
+.browse:hover {
+    color: #fff;
+}
+
+.movie {
+    position: relative;
+}
+
+/** movie poster mathi hover garda rating, genre ko CSS part  */
+.movie-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 61px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie:hover .movie-info {
+    opacity: 1;
+}
+
+.rating,
+.genre {
+    font-size: 1.5em;
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.poster-hover-details-btn {
+    background-color: rgb(35, 199, 35);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
