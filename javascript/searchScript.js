@@ -30,7 +30,6 @@ function displaySearchResults(movies) {
             <div>
                 <p>${movie.title} (${movie.year})</p>
             </div>
-        </a>
         </div>`
         )
         .join("");
