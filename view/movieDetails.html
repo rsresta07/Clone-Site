@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Movie Details</title>
+
+        <link rel="stylesheet" href="../css/movieDetailStyles.css" />
+        <link rel="stylesheet" href="../css/globalstyles.css" />
+        <link rel="stylesheet" href="../css/navbarstyles.css" />
+        <link rel="stylesheet" href="../css/contentstyles.css" />
+        <link rel="stylesheet" href="../css/footerstyles.css" />
+
+        <script
+            type="module"
+            src="../javascript/movieDetailsScript.js"
+        ></script>
+        <script type="module" src="../javascript/searchScript.js"></script>
+        <script type="module" src="../javascript/footerscript.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.2.0/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <nav class="nav-bar">
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <img
+                        src="https://yts.mx/assets/images/website/logo-YTS.svg"
+                    />
+                </a>
+            </div>
+
+            <div class="nav-bar2">
+                <div id="quick-search-container">
+                    <input
+                        class="quick-search-input"
+                        id="searchInput"
+                        type="search"
+                        placeholder="Quick Search"
+                    />
+                    <div id="dropdown" class="dropdown"></div>
+                </div>
+                <div class="main-nav-links">
+                    <ul class="nav-links">
+                        <li><a href="#" class="nav-btn"> Home </a></li>
+                        <li>
+                            <a href="#" style="color: #6ac045" class="nav-btn"
+                                >4K</a
+                            >
+                        </li>
+                        <li><a href="#" class="nav-btn"> Trending </a></li>
+                        <li><a href="#" class="nav-btn">Browse Movies</a></li>
+                    </ul>
+                    <ul class="nav-links">
+                        <li>
+                            <a class="login-nav-btn" href="#">Login</a>
+                            &nbsp;|&nbsp;
+                            <a class="register-nav-btn" href="#">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="landing">
+            <div class="content">
+                <h1 id="movieTitle">Movie Title</h1>
+                <div class="movie-container">
+                    <img
+                        id="moviePoster"
+                        src=""
+                        alt="Movie Poster"
+                        class="movie-poster"
+                    />
+                    <div class="movie-details">
+                        <div class="movie-rating">
+                            <strong>Rating:</strong>
+                            <span id="movieRating"></span>
+                        </div>
+                        <div class="movie-genre">
+                            <strong>Genres:</strong>
+                            <span id="movieGenres"></span>
+                        </div>
+                        <div class="movie-duration">
+                            <strong>Duration:</strong>
+                            <span id="movieDuration"></span>
+                            <span>minutes</span>
+                        </div>
+                        <!-- <div class="movie-directors">
+                            <strong>Directors:</strong>
+                            <span id="movieDirectors"></span>
+                        </div> -->
+                        <div class="movie-actors">
+                            <strong>Actors:</strong>
+                            <span id="movieActors"></span>
+                        </div>
+                        <!-- <div class="movie-quality">
+                            <strong>Quality:</strong>
+                            <span id="movieQuality"></span>
+                        </div> -->
+                        <div class="movie-description">
+                            <strong>Description:</strong>
+                            <p id="movieDescription"></p>
+                        </div>
+                    </div>
+                </div>
+                <a href="../index.html" class="back-btn">Back to Movies</a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-20">
+                        <ul class="text-center" id="footer-list"></ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-20">
+                        <ul class="text-center">
+                            <li><a href="#">EZTV</a></li>
+                            <li>-</li>
+                            <li><a href="#">YIFY Status</a></li>
+                            <li>-</li>
+                            <li><a href="#">YTS Proxies</a></li>
+                            <li>-</li>
+                            <li><a href="#">YTS Proxies (TOR)</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-20">
+                        <ul class="text-center">
+                            <li style="font-size: 0.8em">
+                                By using this site you agree to and accept our
+                                <a href="#">User Agreement</a>, which can be
+                                read <a href="#">here</a>.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
