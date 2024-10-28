@@ -46,27 +46,38 @@ main.landing {
     margin-bottom: 10px;
 }
 
-/* Back Button */
-.back-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #6ac045;
-    color: black !important;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-}
-
-.back-btn:hover {
-    background-color: #5a9b3c;
-    color: black !important;
-}
-
 #movieRating {
-    color:gold;
+    color: gold;
 }
 
 #movieDescription {
     text-align: justify;
+}
+
+.movie-price-container {
+    display: flex;
+    justify-content: space-between; /* Positions elements at opposite ends */
+    align-items: center; /* Vertically centers the content */
+    color: #ccc;
+    margin-top: 20px;
+}
+
+#moviePrice {
+    color: rgb(35, 199, 35);
+}
+
+.addCart-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(35, 199, 35);
+    color: black !important;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.addCart-btn:hover {
+    background-color: #2b8006;
+    color: white !important;
 }

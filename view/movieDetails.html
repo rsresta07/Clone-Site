@@ -5,11 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Movie Details</title>
 
-        <link rel="stylesheet" href="../css/movieDetailStyles.css" />
-        <link rel="stylesheet" href="../css/globalstyles.css" />
-        <link rel="stylesheet" href="../css/navbarstyles.css" />
-        <link rel="stylesheet" href="../css/contentstyles.css" />
-        <link rel="stylesheet" href="../css/footerstyles.css" />
+        <style>
+            @import url("../css/movieDetailStyles.css");
+            @import url("../css/globalStyles.css");
+            @import url("../css/navbarStyles.css");
+            @import url("../css/contentStyles.css");
+            @import url("../css/footerStyles.css");
+        </style>
 
         <script
             type="module"
@@ -86,25 +88,28 @@
                             <span id="movieDuration"></span>
                             <span>minutes</span>
                         </div>
-                        <!-- <div class="movie-directors">
-                            <strong>Directors:</strong>
-                            <span id="movieDirectors"></span>
-                        </div> -->
                         <div class="movie-actors">
                             <strong>Actors:</strong>
                             <span id="movieActors"></span>
                         </div>
-                        <!-- <div class="movie-quality">
-                            <strong>Quality:</strong>
-                            <span id="movieQuality"></span>
-                        </div> -->
                         <div class="movie-description">
                             <strong>Description:</strong>
                             <p id="movieDescription"></p>
                         </div>
                     </div>
                 </div>
-                <a href="../index.html" class="back-btn">Back to Movies</a>
+                <div class="movie-price-container flex-container">
+                    <div>
+                        <strong>Price:</strong>
+                        <span id="moviePrice">NPR 0.00</span>
+                    </div>
+                    <a
+                        href="./addCart.html"
+                        class="addCart-btn"
+                        onclick="addToCart()"
+                        >Add to Cart</a
+                    >
+                </div>
             </div>
         </main>
 

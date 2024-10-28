@@ -3,26 +3,26 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>The Official Home of YIFY Movies Torrent Download - YTS</title>
+        <title>Cart</title>
 
         <style>
             @import url("../css/globalStyles.css");
             @import url("../css/navbarStyles.css");
             @import url("../css/contentStyles.css");
             @import url("../css/footerStyles.css");
+            @import url("../css/cartStyles.css");
         </style>
 
-        <script type="module" src="/javascript/mainscript.js"></script>
-        <script type="module" src="/javascript/searchScript.js"></script>
-        <script type="module" src="/javascript/footerscript.js"></script>
-
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module" src="../javascript/cartScript.js" defer></script>
+        <script type="module" src="../javascript/searchScript.js"></script>
+        <script type="module" src="../javascript/footerscript.js"></script>
     </head>
     <body>
         <!-- Navigation bar -->
         <nav class="nav-bar">
             <div class="nav-logo">
-                <a href="#">
+                <a href="../index.html">
                     <img
                         src="https://yts.mx/assets/images/website/logo-YTS.svg"
                     />
@@ -31,14 +31,14 @@
 
             <div class="nav-bar2">
                 <div id="quick-search-container">
-                <input
-                    class="quick-search-input"
-                    id="searchInput"
-                    type="search"
-                    placeholder="Quick Search"
-                />
-                <div id="dropdown" class="dropdown"></div>
-            </div>
+                    <input
+                        class="quick-search-input"
+                        id="searchInput"
+                        type="search"
+                        placeholder="Quick Search"
+                    />
+                    <div id="dropdown" class="dropdown"></div>
+                </div>
                 <div class="main-nav-links">
                     <ul class="nav-links">
                         <li><a href="#" class="nav-btn"> Home </a></li>
@@ -61,35 +61,46 @@
             </div>
         </nav>
 
-        <!-- Content Section -->
-        <main class="landing">
-            <div class="content">
-                <h1>Download YTS YIFY movies: HD smallest size</h1>
-                <p>
-                    Welcome to the official YTS.MX website. Here you can browse
-                    and download YIFY movies in excellent <br />
-                    720p, 1080p, 2160p 4K and 3D quality, all at the smallest
-                    file size. YTS Movies Torrents.
-                </p>
-
-                <a href="#">
-                    <strong>IMPORTANT</strong> - YTS.MX is the only new official
-                    domain for YIFY Movies
-                </a>
-
-                <div>
-                    <img src="/img/telegram.svg" width="16" height="16" />
-                    <a href="#">@YTSMX_UPDATES</a>
-                    <label style="color: #ccc">|</label>
-                    <img src="/img/twitter.svg" width="16" height="16" />
-                    <a href="#"
-                        >Follow @YTSYIFY for upcoming featured movies!</a
-                    >
+        <main class="cart-container">
+            <!-- Left side: Cart Items List -->
+            <div class="cart-items-list">
+                <h2>My Cart</h2>
+                <div id="cartItems" class="cart-items">
+                    <!-- Cart items will be added here by displayCartItems() -->
                 </div>
             </div>
 
-            <!--* Data haru chai Dynamically load huncha Javascript file bata-->
-            <div id="movies-container"></div>
+            <!-- Right side: Bill Summary -->
+            <div class="bill-summary">
+                <h2>Bill Summary</h2>
+                <hr />
+
+                <div class="price-breakdown">
+                    <div class="price-item">
+                        <span>SUB TOTAL</span> <br />
+                        <span>Special Offer Discount</span>
+                    </div>
+                    <div class="price-item">
+                        <span id="subTotal">NPR 0.00</span> <br />
+                        <span id="discount">NPR -0.00</span>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="total">
+                    <span>Grand Total</span>
+                    <span id="grandTotal">NPR 0.00</span>
+                </div>
+
+                <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+
+                <p class="note">
+                    Note: In the event that the store price and the price listed
+                    below are different, the store price will prevail in every
+                    case.
+                </p>
+            </div>
         </main>
 
         <footer>

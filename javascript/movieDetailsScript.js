@@ -8,51 +8,63 @@ async function fetchMovieDetails() {
         const response = await axios.get(
             `${apiURL}movie_details.json?movie_id=${movieId}&with_cast=true`
         );
-        console.log(response.data);
         const movie = response.data.data.movie;
 
-        // Check if elements exist before setting values
-        const movieTitleElement = document.getElementById("movieTitle");
-        const moviePosterElement = document.getElementById("moviePoster");
-        const movieDescriptionElement =
-            document.getElementById("movieDescription");
-        const movieRatingElement = document.getElementById("movieRating");
-        const movieGenresElement = document.getElementById("movieGenres");
-        const movieDurationElement = document.getElementById("movieDuration");
-        // const movieDirectorsElement = document.getElementById("movieDirectors");
-        const movieActorsElement = document.getElementById("movieActors");
-        // const movieQualityElement = document.getElementById("movieQuality");
+        // Prepare movie data to add to the cart
+        const movieData = {
+            id: movieId,
+            title: movie.title,
+            price: (250.0).toFixed(2),
+            poster: movie.medium_cover_image,
+            description: movie.description_full,
+            rating: movie.rating,
+            genres: movie.genres,
+            duration: movie.runtime,
+            cast: movie.cast ? movie.cast.map((actor) => actor.name) : [],
+        };
 
-        if (movieTitleElement)
-            movieTitleElement.innerText = movie.title || "N/A";
-        if (moviePosterElement)
-            moviePosterElement.src = movie.medium_cover_image || "";
-        if (movieDescriptionElement)
-            movieDescriptionElement.innerText =
-                movie.description_full || "No description available.";
-        if (movieRatingElement)
-            movieRatingElement.innerText = movie.rating ?? "N/A";
-        if (movieGenresElement)
-            movieGenresElement.innerText = Array.isArray(movie.genres)
-                ? movie.genres.join(", ")
-                : "N/A";
-        if (movieDurationElement)
-            movieDurationElement.innerText = movie.runtime ?? "N/A";
+        // Event listener for adding to cart
+        document.querySelector(".addCart-btn").addEventListener("click", () => {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-        // Displaying the cast
-        if (movieActorsElement) {
-            movieActorsElement.innerText = movie.cast
-                ? movie.cast.map((actor) => actor.name).join(", ")
-                : "N/A";
-        }
+            // Check if the movie is already in the cart
+            if (!cart.some((item) => item.id === movieId)) {
+                cart.push(movieData); 
+                localStorage.setItem("cart", JSON.stringify(cart)); 
 
-        // if (movieQualityElement)
-        //     movieQualityElement.innerText = movie.quality || "N/A";
+                const goToCart = confirm(
+                    `${movie.title} has been added to the cart. Would you like to view your cart?`
+                );
+                if (goToCart) {
+                    window.location.href = "/cart.html"; 
+                }
+            } else {
+                alert("This movie is already in the cart.");
+            }
+        });
+
+        // Update the movie details in the HTML
+        document.getElementById("movieTitle").innerText = movie.title || "N/A";
+        document.getElementById("moviePoster").src =
+            movie.medium_cover_image || "";
+        document.getElementById("movieDescription").innerText =
+            movie.description_full || "No description available.";
+        document.getElementById("movieRating").innerText =
+            movie.rating ?? "N/A";
+        document.getElementById("movieGenres").innerText = Array.isArray(
+            movie.genres
+        )
+            ? movie.genres.join(", ")
+            : "N/A";
+        document.getElementById("movieDuration").innerText =
+            movie.runtime ?? "N/A";
+        document.getElementById(
+            "moviePrice"
+        ).innerText = `NPR ${(250.0).toFixed(2)}`;
     } catch (error) {
         console.error("Error fetching movie details:", error);
         alert("Error fetching movie details. Please try again later.");
     }
 }
 
-// Call the function to fetch movie details
 fetchMovieDetails();
