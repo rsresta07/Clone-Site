@@ -14,31 +14,29 @@ async function fetchMovieDetails() {
         // Check if movie details exist in local storage
         let movieData = JSON.parse(localStorage.getItem("selectedMovie")) || {};
 
-        // Log the retrieved movieData from localStorage
-        console.log("Retrieved movieData from localStorage:", movieData);
-
-        // Use a fixed price for all movies
         const fixedPrice = 250.0;
 
         // Only update localStorage if the movie title is different or movieData is empty
         if (!movieData.title || movieData.title !== movie.title) {
+            const discount = Math.floor(Math.random() * 51);
+
             movieData = {
                 title: movie.title,
-                price: fixedPrice.toFixed(2), // Set fixed price here
+                price: fixedPrice.toFixed(2),
                 poster: movie.medium_cover_image,
                 description: movie.description_full,
                 rating: movie.rating,
                 genres: movie.genres,
                 duration: movie.runtime,
                 cast: movie.cast ? movie.cast.map((actor) => actor.name) : [],
+                discount: discount,
             };
 
-            // Save to localStorage only if it’s new data or title mismatch
+
             localStorage.setItem("selectedMovie", JSON.stringify(movieData));
-            console.log("Updated movieData:", movieData); // Log updated movieData
+            console.log("Updated movieData:", movieData);
         }
 
-        // Check if elements exist before setting values
         const title = document.getElementById("movieTitle");
         const poster = document.getElementById("moviePoster");
         const description = document.getElementById("movieDescription");
@@ -60,15 +58,8 @@ async function fetchMovieDetails() {
                 : "N/A";
         if (duration) duration.innerText = movie.runtime ?? "N/A";
 
-        // Displaying the cast
-        if (actors)
-            actors.innerText = movie.cast
-                ? movie.cast.map((actor) => actor.name).join(", ")
-                : "N/A";
-
-        // Correctly formatting price for display
         if (price) {
-            price.innerText = `NPR ${fixedPrice.toFixed(2)}`; // Display fixed price
+            price.innerText = `NPR ${fixedPrice.toFixed(2)}`; 
         }
     } catch (error) {
         console.error("Error fetching movie details:", error);

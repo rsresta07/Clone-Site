@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (movieData) {
         const originalPrice = parseFloat(movieData.price);
-        const discount = 50; // Example fixed discount
+        const discount = movieData.discount || 0;
+
         const finalPrice = originalPrice - discount;
 
         document.getElementById("cartTitle").innerText =
