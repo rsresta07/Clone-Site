@@ -46,8 +46,27 @@ main.landing {
     margin-bottom: 10px;
 }
 
-/* Back Button */
-.back-btn {
+#movieRating {
+    color: gold;
+}
+
+#movieDescription {
+    text-align: justify;
+}
+
+.movie-price-container {
+    display: flex;
+    justify-content: space-between; /* Positions elements at opposite ends */
+    align-items: center; /* Vertically centers the content */
+    color: #ccc;
+    margin-top: 20px;
+}
+
+#moviePrice {
+    color: #6ac045;
+}
+
+.addCart-btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #6ac045;
@@ -55,18 +74,10 @@ main.landing {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-top: 20px;
+    margin-left: 10px;
 }
 
-.back-btn:hover {
+.addCart-btn:hover {
     background-color: #5a9b3c;
     color: black !important;
-}
-
-#movieRating {
-    color:gold;
-}
-
-#movieDescription {
-    text-align: justify;
 }

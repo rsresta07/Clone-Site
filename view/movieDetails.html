@@ -5,11 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Movie Details</title>
 
-        <link rel="stylesheet" href="../css/movieDetailStyles.css" />
-        <link rel="stylesheet" href="../css/globalstyles.css" />
-        <link rel="stylesheet" href="../css/navbarstyles.css" />
-        <link rel="stylesheet" href="../css/contentstyles.css" />
-        <link rel="stylesheet" href="../css/footerstyles.css" />
+        <style>
+            @import url("../css/movieDetailStyles.css");
+            @import url("../css/globalStyles.css");
+            @import url("../css/navbarStyles.css");
+            @import url("../css/contentStyles.css");
+            @import url("../css/footerStyles.css");
+        </style>
 
         <script
             type="module"
@@ -104,7 +106,13 @@
                         </div>
                     </div>
                 </div>
-                <a href="../index.html" class="back-btn">Back to Movies</a>
+                <div class="movie-price-container flex-container">
+                    <div>
+                        <strong>Price:</strong>
+                        <span id="moviePrice">NPR 0.00</span>
+                    </div>
+                    <a href="./addCart.html" class="addCart-btn">Add to Cart</a>
+                </div>
             </div>
         </main>
 
