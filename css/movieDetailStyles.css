@@ -63,13 +63,13 @@ main.landing {
 }
 
 #moviePrice {
-    color: #6ac045;
+    color: rgb(35, 199, 35);
 }
 
 .addCart-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #6ac045;
+    background-color: rgb(35, 199, 35);
     color: black !important;
     text-decoration: none;
     border-radius: 5px;
@@ -78,6 +78,6 @@ main.landing {
 }
 
 .addCart-btn:hover {
-    background-color: #5a9b3c;
-    color: black !important;
+    background-color: #2b8006;
+    color: white !important;
 }
