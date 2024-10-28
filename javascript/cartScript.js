@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     displayCartItems();
-    calculateBill();
 });
 
 function displayCartItems() {
@@ -8,7 +7,6 @@ function displayCartItems() {
     const cartItemsContainer = document.getElementById("cartItems");
     cartItemsContainer.innerHTML = ""; // Clear existing items
 
-    let subTotal = 0;
     cart.forEach((movie, index) => {
         // Create elements for each movie item
         const cartItem = document.createElement("div");
@@ -24,15 +22,9 @@ function displayCartItems() {
         `;
 
         cartItemsContainer.appendChild(cartItem);
-        subTotal += parseFloat(movie.price);
     });
 
-    document.getElementById("subTotal").innerText = `NPR ${subTotal.toFixed(
-        2
-    )}`;
-    document.getElementById("grandTotal").innerText = `NPR ${subTotal.toFixed(
-        2
-    )}`;
+    calculateBill(); // Calculate totals after displaying items
 }
 
 function removeItem(index) {
@@ -42,8 +34,7 @@ function removeItem(index) {
     if (index >= 0 && index < cart.length) {
         cart.splice(index, 1); // Remove the item at the specified index
         localStorage.setItem("cart", JSON.stringify(cart)); // Update local storage
-        displayCartItems(); // Refresh the cart display
-        calculateBill(); // Recalculate the bill
+        displayCartItems(); // Refresh the cart display and recalculate bill
     }
 }
 
@@ -55,7 +46,8 @@ function calculateBill() {
 
     const discountRate = 10;
 
-    let subTotal = cart.reduce(
+    // Calculate the subtotal by summing the price of each item
+    const subTotal = cart.reduce(
         (total, movie) => total + parseFloat(movie.price),
         0
     );
