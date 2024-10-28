@@ -14,7 +14,9 @@
         </style>
 
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="../javascript/cartScript.js"></script>
+        <script type="module" src="../javascript/cartScript.js" defer></script>
+        <script type="module" src="../javascript/searchScript.js"></script>
+        <script type="module" src="../javascript/footerscript.js"></script>
     </head>
 
     <body>
@@ -61,54 +63,45 @@
         </nav>
 
         <main class="cart-container">
-            <h1>My Cart</h1>
+            <!-- Left side: Cart Items List -->
+            <div class="cart-items-list">
+                <h2>My Cart</h2>
+                <div id="cartItems" class="cart-items">
+                    <!-- Cart items will be added here by displayCartItems() -->
+                </div>
+            </div>
 
-            <div class="cart-item">
-                <p>
-                    <strong id="cartTitle">Movie Title</strong>
-                    <!-- <span id="cartQuantity">1x</span> -->
+            <!-- Right side: Bill Summary -->
+            <div class="bill-summary">
+                <h2>Bill Summary</h2>
+                <hr />
+
+                <div class="price-breakdown">
+                    <div class="price-item">
+                        <span>SUB TOTAL</span> <br/>
+                        <span>Special Offer Discount</span>
+                    </div>
+                    <div class="price-item">
+                        <span id="subTotal">NPR 0.00</span> <br/>
+                        <span id="discount">NPR -0.00</span>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="total">
+                    <span>Grand Total</span>
+                    <span id="grandTotal">NPR 0.00</span>
+                </div>
+
+                <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+
+                <p class="note">
+                    Note: In the event that the store price and the price listed
+                    below are different, the store price will prevail in every
+                    case.
                 </p>
-                <p>
-                    <strong class="cart-price" id="cartPrice"
-                        >NPR 250.00</strong
-                    >
-                </p>
             </div>
-
-            <hr />
-
-            <div class="price-breakdown">
-                <div class="price-item">
-                    <span>SUB TOTAL</span>
-                    <span id="subTotal">NPR 250.00</span>
-                </div>
-                <div class="price-item">
-                    <span>Delivery Fee</span>
-                    <span>NPR 0.00</span>
-                </div>
-                <div class="price-item">
-                    <span>Service Charge</span>
-                    <span>NPR 0.00</span>
-                </div>
-                <div class="price-item special-discount">
-                    <span>Special Offer Discount</span>
-                    <span id="discount">NPR 0.00</span>
-                </div>
-            </div>
-
-            <hr />
-
-            <div class="total">
-                <span>Grand Total</span>
-                <span id="grandTotal">NPR 200.00</span>
-            </div>
-
-            <button class="checkout-btn">PROCEED TO CHECKOUT</button>
-
-            <p class="note">
-                Note: In the event that the store price and the price listed
-                below are different, the store price will prevail in every case.
-            </p>
         </main>
 
         <footer>
