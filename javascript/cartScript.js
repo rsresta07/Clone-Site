@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function displayCartItems() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartItemsContainer = document.getElementById("cartItems");
-    cartItemsContainer.innerHTML = "";
+    cartItemsContainer.innerHTML = ""; // Clear existing items
 
     let subTotal = 0;
-    cart.forEach((movie) => {
+    cart.forEach((movie, index) => {
         // Create elements for each movie item
         const cartItem = document.createElement("div");
         cartItem.classList.add("cart-item");
@@ -18,8 +18,8 @@ function displayCartItems() {
             <img src="${movie.poster}" alt="${movie.title} poster" />
             <div class="cart-item-details">
                 <h3>${movie.title}</h3>
-                <p>Price: NPR ${movie.price}</p>
-                <button onclick="removeFromCart('${movie.id}')">Remove</button>
+                <p style="color:#28a745">NPR ${movie.price}</p>
+                <button class="remove" onclick="removeItem(${index})">Remove</button>
             </div>
         `;
 
@@ -35,12 +35,16 @@ function displayCartItems() {
     )}`;
 }
 
-function removeFromCart(movieId) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart = cart.filter((movie) => movie.id !== movieId);
-    localStorage.setItem("cart", JSON.stringify(cart)); 
-    displayCartItems(); 
-    calculateBill(); 
+function removeItem(index) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the index is valid
+    if (index >= 0 && index < cart.length) {
+        cart.splice(index, 1); // Remove the item at the specified index
+        localStorage.setItem("cart", JSON.stringify(cart)); // Update local storage
+        displayCartItems(); // Refresh the cart display
+        calculateBill(); // Recalculate the bill
+    }
 }
 
 function calculateBill() {
@@ -49,15 +53,15 @@ function calculateBill() {
     const discountElement = document.getElementById("discount");
     const grandTotalElement = document.getElementById("grandTotal");
 
-    const discountRate = 10; 
+    const discountRate = 10;
 
     let subTotal = cart.reduce(
         (total, movie) => total + parseFloat(movie.price),
         0
     );
+
     const discountAmount = (subTotal * discountRate) / 100;
-    const grandTotal =
-        subTotal - discountAmount;
+    const grandTotal = subTotal - discountAmount;
 
     subTotalElement.innerText = `NPR ${subTotal.toFixed(2)}`;
     discountElement.innerText = `NPR -${discountAmount.toFixed(2)}`;
