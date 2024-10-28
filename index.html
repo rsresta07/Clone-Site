@@ -5,15 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>The Official Home of YIFY Movies Torrent Download - YTS</title>
 
-        <link rel="stylesheet" href="/css/globalstyles.css" />
-        <link rel="stylesheet" href="/css/navbarstyles.css" />
-        <link rel="stylesheet" href="/css/contentstyles.css" />
-        <link rel="stylesheet" href="/css/footerstyles.css" />
+        <style>
+            @import url("../css/globalStyles.css");
+            @import url("../css/navbarStyles.css");
+            @import url("../css/contentStyles.css");
+            @import url("../css/footerStyles.css");
+        </style>
 
         <script type="module" src="/javascript/mainscript.js"></script>
         <script type="module" src="/javascript/searchScript.js"></script>
-        <script type="module" src="/javascript/movieData.js"></script>
         <script type="module" src="/javascript/footerscript.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <!-- Navigation bar -->
@@ -32,7 +35,7 @@
                     class="quick-search-input"
                     id="searchInput"
                     type="search"
-                    placeholder="Quick search"
+                    placeholder="Quick Search"
                 />
                 <div id="dropdown" class="dropdown"></div>
             </div>
