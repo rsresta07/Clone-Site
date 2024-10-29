@@ -17,24 +17,28 @@ function displayCartItems() {
             <div class="cart-item-details">
                 <h3>${movie.title}</h3>
                 <p style="color:#28a745">NPR ${movie.price}</p>
-                <button class="remove" onclick="removeItem(${index})">Remove</button>
+                <button class="remove">Remove</button>
             </div>
         `;
 
         cartItemsContainer.appendChild(cartItem);
+
+        cartItem
+            .querySelector(".remove")
+            .addEventListener("click", () => removeItem(index));
     });
 
-    calculateBill(); // Calculate totals after displaying items
+    calculateBill();
 }
 
 function removeItem(index) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Check if the index is valid
+    // index valid cha ki chaina check garcha
     if (index >= 0 && index < cart.length) {
-        cart.splice(index, 1); // Remove the item at the specified index
-        localStorage.setItem("cart", JSON.stringify(cart)); // Update local storage
-        displayCartItems(); // Refresh the cart display and recalculate bill
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCartItems();
     }
 }
 
@@ -46,7 +50,7 @@ function calculateBill() {
 
     const discountRate = 10;
 
-    // Calculate the subtotal by summing the price of each item
+    // Calculate the subtotal
     const subTotal = cart.reduce(
         (total, movie) => total + parseFloat(movie.price),
         0
